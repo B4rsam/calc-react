@@ -1,5 +1,5 @@
 let flag = 0;
-let firstInput = "", secondInput = "",output;
+let firstInput = "", secondInput = "",output,disp;
 
 const NumButton = (props) => {
     return (
@@ -31,13 +31,54 @@ const numInput = (num) => {
 }
 
 const funcInput = (val) => {
-    flag = 1;
-    output = firstInput + " " + val;
-    console.log(output);
+    disp = firstInput + " " + val;
+    switch(val)
+    {
+        case "+":
+            flag = 1;
+            break;
+        case "-":
+            flag = 2;
+            break;
+        case "*":
+            flag = 3;
+            break;
+        case "/":
+            flag = 4;
+            break;
+    }
+    console.log(disp);
 }
 
 const ctrlInput = (job) => {
-    console.log(job);
+    if (job === "clr")
+    {
+        output = firstInput = secondInput = "";
+        disp = "0";
+        flag = 0;
+
+    }
+    else if (job === "equ")
+    {
+        switch(flag)
+        {
+            case 1:
+                output = parseInt(firstInput) + parseInt(secondInput);
+                break;
+            case 2:
+                output = parseInt(firstInput) - parseInt(secondInput);
+                break;
+            case 3:
+                output = parseInt(firstInput) * parseInt(secondInput);
+                break;
+            case 4:
+                output = parseInt(firstInput) / parseInt(secondInput);
+                break;
+
+        }
+        disp += " " + secondInput + " = " + output;
+        console.log(disp); 
+    }
 }
 
 export {NumButton,FuncButton,CtrlButton};
