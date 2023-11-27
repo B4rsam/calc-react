@@ -1,33 +1,43 @@
 let flag = 0;
+let firstInput = "", secondInput = "",output;
 
 const NumButton = (props) => {
     return (
-        <button className="numbtn">{props.num}</button>
+        <button className="numbtn" onClick={() => numInput(props.num)}>{props.num}</button>
     )
 }
 
 const FuncButton = (props) => {
     return (
-        <button className={props.job}>{props.val}</button>
+        <button className={props.job} onClick={() => funcInput(props.val)}>{props.val}</button>
     )
 }
 
 const CtrlButton = (props) => {
     return (
-        <button className={props.job}>{props.val}</button>
+        <button className={props.job} onClick={() => ctrlInput(props.job)}>{props.val}</button>
     )
 }
 
-function numInput() {
-    let firstInput, secondInput;
+const numInput = (num) => {
     if (flag === 0)
     {
-        console.log("numinput");
+        firstInput += num;
     }
     else
     {
-
+        secondInput += num;
     }
+}
+
+const funcInput = (val) => {
+    flag = 1;
+    output = firstInput + " " + val;
+    console.log(output);
+}
+
+const ctrlInput = (job) => {
+    console.log(job);
 }
 
 export {NumButton,FuncButton,CtrlButton};
