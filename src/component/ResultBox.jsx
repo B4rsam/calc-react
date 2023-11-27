@@ -1,6 +1,8 @@
+import { disp } from "./Button";
+
 const ResultBox = () => {
     return (
-        <div></div>
+        <div id="resbox">{disp}</div>
     )
 }
 

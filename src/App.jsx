@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className='container'>
-      <ResultBox className="resbox"/>
+      <ResultBox />
       <div className='btnHolder'>
         <NumBox />
         <FuncBox />

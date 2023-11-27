@@ -1,5 +1,5 @@
 let flag = 0;
-let firstInput = "", secondInput = "",output,disp;
+let firstInput = "", secondInput = "",output,disp = "0";
 
 const NumButton = (props) => {
     return (
@@ -23,10 +23,14 @@ const numInput = (num) => {
     if (flag === 0)
     {
         firstInput += num;
+        disp = firstInput;
+        document.getElementById("resbox").innerHTML = disp;
     }
     else
     {
         secondInput += num;
+        disp = disp + secondInput;
+        document.getElementById("resbox").innerHTML = disp;
     }
 }
 
@@ -47,7 +51,9 @@ const funcInput = (val) => {
             flag = 4;
             break;
     }
+    disp += " ";
     console.log(disp);
+    document.getElementById("resbox").innerHTML = disp;
 }
 
 const ctrlInput = (job) => {
@@ -56,6 +62,7 @@ const ctrlInput = (job) => {
         output = firstInput = secondInput = "";
         disp = "0";
         flag = 0;
+        document.getElementById("resbox").innerHTML = disp;
 
     }
     else if (job === "equ")
@@ -76,9 +83,10 @@ const ctrlInput = (job) => {
                 break;
 
         }
-        disp += " " + secondInput + " = " + output;
+        disp += " = " + output;
         console.log(disp); 
+        document.getElementById("resbox").innerHTML = disp;
     }
 }
 
-export {NumButton,FuncButton,CtrlButton};
+export {NumButton,FuncButton,CtrlButton,ctrlInput,disp};
