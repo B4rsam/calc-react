@@ -1,4 +1,5 @@
 import { disp } from "./Button";
+import '../styles.css'
 
 const ResultBox = () => {
     return (

@@ -1,21 +1,23 @@
+import '../styles.css'
+
 let flag = 0;
 let firstInput = "", secondInput = "",output,disp = "0";
 
 const NumButton = (props) => {
     return (
-        <button className="numbtn" onClick={() => numInput(props.num)}>{props.num}</button>
+        <button className="btn numbtn" onClick={() => numInput(props.num)}>{props.num}</button>
     )
 }
 
 const FuncButton = (props) => {
     return (
-        <button className={props.job} onClick={() => funcInput(props.val)}>{props.val}</button>
+        <button className={`btn funcbtn ${props.job}`} onClick={() => funcInput(props.val)}>{props.val}</button>
     )
 }
 
 const CtrlButton = (props) => {
     return (
-        <button className={props.job} onClick={() => ctrlInput(props.job)}>{props.val}</button>
+        <button className={`btn ${props.job}`} onClick={() => ctrlInput(props.job)}>{props.val}</button>
     )
 }
 

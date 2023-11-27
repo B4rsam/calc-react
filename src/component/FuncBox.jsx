@@ -1,4 +1,5 @@
 import { FuncButton,CtrlButton } from "./Button"
+import '../styles.css'
 
 const FuncBox = () => {
     return (

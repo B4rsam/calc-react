@@ -1,4 +1,5 @@
 import { NumButton } from "./Button.jsx";
+import '../styles.css'
 
 const NumBox = () => {
     return (
